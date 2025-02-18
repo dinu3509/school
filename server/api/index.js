@@ -97,7 +97,7 @@ app.post("/home", async (req, res) => {
       const user = await csModel.findOne({uid});
       if(!user){ return res.status(404).json({message:"No user FOund"})}
       return user 
-      ?res.json({message:"Details Found",user})
+      ? res.json({message:"Details Found",user})
       : res.status(404).json({message:"No user found"})
     }
 
