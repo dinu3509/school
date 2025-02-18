@@ -93,6 +93,13 @@ app.post("/home", async (req, res) => {
         ? res.json({ message: "Dashboard found", user, user2 })
         : res.status(404).json({ message: "No user2 found" });
     }
+    if(section === "attendance"){
+      const user = await csModel.findOne({uid});
+      if(!user){ return res.status(404).json({message:"No user FOund"})}
+      return user 
+      ?res.json({message:"Details Found",user})
+      : res.status(404).json({message:"No user found"})
+    }
 
     res.status(400).json({ message: "Invalid section" });
   } catch (err) {
