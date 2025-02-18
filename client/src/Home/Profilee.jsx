@@ -79,20 +79,19 @@ const Profilee = () => {
   }, [uid]);
 
   {
-    /**
-  useEffect(() => {
-    if (userData.length > 0) {
-      const semesterValue = userData.find(
-        (item) => item.key === "semester"
-      )?.value;
-      if (semesterValue) {
-        const updatedSemester = Number(semesterValue) - 1;
-        setSemester(updatedSemester);
-        localStorage.setItem("semester", updatedSemester); // Store semester value
-        console.log("Updated semester:", updatedSemester);
+    useEffect(() => {
+      if (userData.length > 0) {
+        const semesterValue = userData.find(
+          (item) => item.key === "semester"
+        )?.value;
+        if (semesterValue) {
+          const updatedSemester = Number(semesterValue) - 1;
+          setSemester(updatedSemester);
+          localStorage.setItem("semester", updatedSemester); // Store semester value
+          console.log("Updated semester:", updatedSemester);
+        }
       }
-    }
-  }, [userData, setSemester]); */
+    }, [userData, setSemester]);
   }
 
   return (
