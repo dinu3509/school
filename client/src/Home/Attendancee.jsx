@@ -28,8 +28,10 @@ const Attendancee = () => {
 
           // Find the selected semester's courses
           const selectedSemester = semesters.find(
+            
             (sem) => sem.semester === semester + 1
           );
+          console.log(semester);
           setCourses(selectedSemester ? selectedSemester.courses : []);
         }
       })
