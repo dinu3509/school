@@ -9,8 +9,8 @@ const Attendancee = () => {
   const [courses, setCourses] = useState([]); // ✅ Store courses here
 
   const section = "attendance";
-  const { semester } = useContext(UserContext);
-  const { uid } = useContext(UserContext);
+
+  const { uid , semester} = useContext(UserContext);
 
   useEffect(() => {
     if (!uid) return; // Prevent API call if uid is undefined/null
@@ -29,7 +29,7 @@ const Attendancee = () => {
           // Find the selected semester's courses
           const selectedSemester = semesters.find(
             
-            (sem) => sem.semester === semester + 1
+            (sem) => sem.semester === semester 
           );
           console.log(semester);
           setCourses(selectedSemester ? selectedSemester.courses : []);
